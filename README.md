@@ -41,6 +41,19 @@ El servidor de desarrollo queda disponible en **http://localhost:5173**.
 
 ---
 
+## Rutas del API (backend)
+
+Base URL: `http://localhost:3000`
+
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| GET | `/files/list` | Lista los archivos disponibles en la API externa |
+| GET | `/files/data` | Retorna los datos de todos los archivos procesados |
+| GET | `/files/data?fileName=file1.csv` | Retorna los datos de un archivo específico |
+
+
+---
+
 ## Correr tests (backend)
 
 ```bash
