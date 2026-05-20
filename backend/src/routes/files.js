@@ -17,6 +17,9 @@ router.get('/data', async (req, res) => {
   try {
     const { fileName } = req.query
     const data = await filesService.getFilesData(fileName)
+    if (fileName && data.length === 0) {
+      return res.status(404).json({ error: `File '${fileName}' not found` })
+    }
     res.json(data)
   } catch (err) {
     if (err.notFound) return res.status(404).json({ error: err.message })
