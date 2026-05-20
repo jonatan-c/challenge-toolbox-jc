@@ -1,12 +1,12 @@
 const express = require('express')
 const filesService = require('../services/filesService')
-const { listFiles } = require('../services/externalApi')
+const externalApi = require('../services/externalApi')
 
 const router = express.Router()
 
 router.get('/list', async (req, res) => {
   try {
-    const files = await listFiles()
+    const files = await externalApi.listFiles()
     res.json({ files })
   } catch (err) {
     res.status(500).json({ error: 'Failed to retrieve file list' })
