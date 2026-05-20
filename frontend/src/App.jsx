@@ -24,7 +24,7 @@ function App() {
 
     fetch(url)
       .then((res) => {
-        if (!res.ok) throw new Error(`Server error: ${res.status}`)
+        if (!res.ok) throw new Error(`Archivo no encontrado`)
         return res.json()
       })
       .then((data) => setFiles(data))
