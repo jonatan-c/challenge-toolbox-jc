@@ -19,6 +19,12 @@ Fullstack web application that fetches CSV data from an external API, processes 
 
 ---
 
+## Environment Variables
+
+For simplicity, environment variables (API key, base URL) are hardcoded directly in the source code so the project runs out of the box without needing to configure any `.env` file. **This should never be done in a production system** — secrets must always be managed via environment variables, secret managers, or similar mechanisms.
+
+---
+
 ## Running the project
 
 ### With Docker (recommended)
@@ -89,12 +95,6 @@ Base URL: `http://localhost:3000`
 | GET | `/files/list` | Returns the list of available files from the external API |
 | GET | `/files/data` | Returns parsed data from all files |
 | GET | `/files/data?fileName=file1.csv` | Returns parsed data for a specific file |
-
----
-
-## Environment Variables
-
-For simplicity, environment variables (API key, base URL) are hardcoded directly in the source code so the project runs out of the box without needing to configure any `.env` file. **This should never be done in a production system** — secrets must always be managed via environment variables, secret managers, or similar mechanisms.
 
 ---
 
