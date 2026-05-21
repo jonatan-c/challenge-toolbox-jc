@@ -7,13 +7,13 @@ Fullstack web application that fetches CSV data from an external API, processes 
 ## Tech Stack
 
 ### Backend
-- **Node** — v14+
+- **Node** — >=v14
 - **Express** — REST server
 - **Axios** — HTTP client for consuming the external API
 - **Mocha / Chai / Sinon** — testing
 
 ### Frontend
-- **Node** — v24+
+- **Node** — >=v24
 - **React** — UI library
 - **React Bootstrap** — components and styles
 
