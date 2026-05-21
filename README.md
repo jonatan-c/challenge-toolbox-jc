@@ -92,6 +92,12 @@ Base URL: `http://localhost:3000`
 
 ---
 
+## Environment Variables
+
+For simplicity, environment variables (API key, base URL) are hardcoded directly in the source code so the project runs out of the box without needing to configure any `.env` file. **This should never be done in a production system** — secrets must always be managed via environment variables, secret managers, or similar mechanisms.
+
+---
+
 ## Running tests
 
 ### With Docker
