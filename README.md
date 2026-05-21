@@ -1,62 +1,62 @@
 # Challenge Toolbox JC
 
-Aplicación web fullstack que consume una API externa de datos CSV, los procesa en el backend y los visualiza en el frontend.
+Fullstack web application that fetches CSV data from an external API, processes it in the backend, and displays it in the frontend.
 
 ---
 
-## Tecnologías
+## Tech Stack
 
 ### Backend
 - **Node** — v14+
-- **Express** — servidor REST
-- **Axios** — cliente HTTP para consumir la API externa
-- **Mocha / Chai / Nock / Sinon** — testing
+- **Express** — REST server
+- **Axios** — HTTP client for consuming the external API
+- **Mocha / Chai / Sinon** — testing
 
 ### Frontend
 - **Node** — v24+
-- **React** — librería de UI
-- **React Bootstrap** — componentes y estilos
+- **React** — UI library
+- **React Bootstrap** — components and styles
 
 ---
 
-## Levantar el proyecto
+## Running the project
 
-### Con Docker (recomendado)
+### With Docker (recommended)
 
-Requiere tener [Docker](https://www.docker.com/) instalado.
+Requires [Docker](https://www.docker.com/) installed.
 
 ```bash
 docker-compose up --build
 ```
 
-| Servicio | URL |
+| Service  | URL |
 |----------|-----|
 | Frontend | http://localhost:5173 |
 | Backend  | http://localhost:3000 |
 
-**Verificar que los contenedores están corriendo:**
+**Check running containers:**
 ```bash
 docker-compose ps
 ```
 
-**Ver logs en tiempo real:**
+**Stream logs:**
 ```bash
 docker-compose logs -f
 ```
 
-**Detener los contenedores:**
+**Stop containers:**
 ```bash
 docker-compose down
 ```
 
-**Probar el backend directamente:**
+**Test the backend directly:**
 ```bash
 curl http://localhost:3000/files/list
 ```
 
 ---
 
-### Sin Docker (manual)
+### Without Docker (manual)
 
 #### Backend
 
@@ -66,7 +66,7 @@ npm install
 npm start
 ```
 
-El servidor queda escuchando en **http://localhost:3000**
+Server listens on **http://localhost:3000**
 
 #### Frontend
 
@@ -76,35 +76,33 @@ npm install
 npm run dev
 ```
 
-El servidor de desarrollo queda disponible en **http://localhost:5173**.
+Dev server available at **http://localhost:5173**
 
 ---
 
-## Rutas del API (backend)
+## API Routes (backend)
 
 Base URL: `http://localhost:3000`
 
-| Método | Ruta | Descripción |
-|--------|------|-------------|
-| GET | `/files/list` | Lista los archivos disponibles en la API externa |
-| GET | `/files/data` | Retorna los datos de todos los archivos procesados |
-| GET | `/files/data?fileName=file1.csv` | Retorna los datos de un archivo específico |
-
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/files/list` | Returns the list of available files from the external API |
+| GET | `/files/data` | Returns parsed data from all files |
+| GET | `/files/data?fileName=file1.csv` | Returns parsed data for a specific file |
 
 ---
 
-## Correr tests
+## Running tests
 
-### En un contenedor ya corriendo
+### With Docker
 
 ```bash
 docker-compose exec backend npm test
 ```
 
-### Sin Docker
+### Without Docker
 
 ```bash
 cd backend
 npm test
 ```
-

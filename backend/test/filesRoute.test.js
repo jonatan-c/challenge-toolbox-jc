@@ -81,7 +81,7 @@ describe('GET /files/data', () => {
 
 
   it('filters by fileName query param and returns matching data', async () => {
-    const mockData = [{ file: 'file1.csv', lines: [{ text: 'hola', number: 1, hex: 'a3f1b2c4d5e6f7a8b9c0d1e2f3a4b5c6' }] }];
+    const mockData = [{ file: 'file1.csv', lines: [{ text: 'hello', number: 1, hex: 'a3f1b2c4d5e6f7a8b9c0d1e2f3a4b5c6' }] }];
 
     sinon.stub(filesService, 'getFilesData').resolves(mockData);
     const res = await get('/files/data?fileName=file1.csv');
